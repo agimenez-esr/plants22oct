@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title={specie.Name} icon-name="custom:custom5">
+        <lightning-button label="View Details" slot="actions" onclick={handleViewMoreClick}></lightning-button>
+        <img src={specie.Image_URL__c} alt={specie.Name} />
+    </lightning-card>
+
+   
+    <div class="openModal" if:true={isModalOpen}>
+        <lightning-button label="Close" slot="actions" onclick={closeModal}></lightning-button>
+        <h2 class="title_popUp">Details for {specie.Name}</h2>
+        <div class="slds-p-around_medium">
+            <p class="organize_text">{specie.Description__c}</p>
+            <img width="350" height="300" src={specie.Image_URL__c} alt={specie.Name} />
+            <p class="organize_text">{specie.Location__c}</p>
+            <p>{specie.Ideal_Max_Temperature__c}</P>
+        </div>
+    </div>
+
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <template if:true={mySpecies.data}>
+        <template for:each={mySpecies.data} for:item="x">
+            <div key={x.Name}>
+                <c-species-tile specie={x} class="slds-col slds-var-m-around_small"></c-species-tile>
+            </div>
+        </template>
+    </template>
+</template>

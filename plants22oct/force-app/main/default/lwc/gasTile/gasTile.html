@@ -1,0 +1,28 @@
+<template>
+    <lightning-card icon-name="custom:custom19">
+        <div class="container1">
+            <lightning-combobox
+            label="ELIGE TU PROVINCIA" 
+            value={selectedOptionprov}
+            placeholder="Selecciona una opción" 
+            options={optionsprov} 
+            onchange={handleSelectionChangeprov}>
+        </lightning-combobox>
+        </div>
+        
+        <div class="container1">
+            <lightning-combobox
+            label="ELIGE TU MUNICIPIO" 
+            value={selectedOption} 
+            placeholder="Selecciona una opción" 
+            options={options} 
+            onchange={handleSelectionChange}>
+            </lightning-combobox>
+        </div>
+            
+        <div lwc:dom="manual" class="gasPricesContainer"></div>
+        <template if:true={error}>
+            <div>Error: {error.message}</div>
+        </template>
+    </lightning-card>
+</template>
